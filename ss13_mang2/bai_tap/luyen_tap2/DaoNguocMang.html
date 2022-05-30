@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dao nguoc mang</title>
+</head>
+<body>
+<script>
+    let size;
+    let x = new Array(size);
+
+    do {
+        size = prompt('Nhap vao so luong phan tu cua mang', '');
+        check = parseInt(size) == size && 0 < size <= 20;
+    } while (!check)
+
+
+    for (let i = 0; i < size; i++) {
+        x[i] = prompt('Nhap vao gia tri thu ' + i);
+    }
+
+    document.write(x);
+
+    let first = 0;
+    let last = size - 1;
+
+    while (first < last) {
+        let b;
+        b = x[first];
+        x[first] = x[last];
+        x[last] = b;
+        first++;
+        last--;
+
+    }
+
+    document.write('<br>' + x);
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> khởi tạo/nhập vào một mảng số nguyên và đảo ngược các phần tử trong mảng đó.</title>
+</head>
+<body>
+<script>
+
+    let size;
+    let x = new Array(size);
+
+    do {
+        size = prompt('Nhap vao so phan tu cua mang', '')
+        check = parseInt(size) == size && 0 < size <= 20
+    } while (!check)
+
+    // nhap cac gia tri cua mang
+
+    for (let i = 0; i < size; i++) {
+        x[i] = prompt('Nhap vao gia tri thu ' + i);
+
+    }
+
+    document.write(x);
+// dao nguoc mang
+
+    for (let i = 0; i < size; i++) {
+        let first = i;
+        let last = size - 1 - i;
+        let b;
+        if (first < last) {
+            b = x[first];
+            x[first] = x[last];
+            x[last] = b;
+
+        } else {
+            break;
+        }
+
+    }
+
+    document.write('<br>'+x);
+
+</script>
+</body>
+</html>

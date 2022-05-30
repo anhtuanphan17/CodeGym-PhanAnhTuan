@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyen Doi Tien Te</title>
+</head>
+<body>
+<form>
+
+    <b>Amount</b> <br>
+    <input id="amount" type="text"><br>
+
+    From Curency
+
+    <select id="nn1">
+        <option>VND</option>
+        <option>USD</option>
+        <option>JYP</option>
+        <br>
+    </select>
+
+    To Curency
+    <select id="nn2">
+        <option>VND</option>
+        <option>USD</option>
+        <option>JYP</option>
+    </select>
+    <p></p>
+    <button type="button" onclick="submitkq()">Convert</button>
+    <div>Total<input id="display" type="text"></div>
+
+
+</form>
+</body>
+
+<script>
+
+
+    function submitkq() {
+        let a = document.getElementById('amount').value;
+        a = parseInt(a);
+        let n1 = document.getElementById('nn1').value;
+        let n2 = document.getElementById('nn2').value;
+
+        let kq = 0;
+
+        if (n1 == "VND") {
+            if (n2 == "VND") {
+                kq = a;
+            } else if (n2 == "USD") {
+                kq = a / 23000;
+            } else if (n2 == "JYP") {
+                kq = a / 220;
+            }
+        } else if (n1 == "USD") {
+            if (n2 == "VND") {
+                kq = a * 23000;
+            } else if (n2 == "USD") {
+                kq = a;
+            } else if (n2 == "JYP") {
+                kq = a * 100;
+            }
+
+        } else if (n1 == "JYP") {
+            if (n2 == "VND") {
+                kq = a * 220;
+            } else if (n2 == "USD") {
+                kq = a / 100;
+            } else if (n2 == "JYP") {
+                kq = a;
+            }
+
+        }
+        document.getElementById("display").value=kq;
+    }
+
+</script>
+</html>

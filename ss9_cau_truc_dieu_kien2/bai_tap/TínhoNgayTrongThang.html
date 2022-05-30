@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh So Ngay Trong </title>
+</head>
+<body>
+
+<p>Month<input id="thang" type="text"></p>
+<p>Year<input id="nam" type="text"></p>
+
+<input type="button" value="click here" onclick="aaDa()">
+
+</body>
+
+<script>
+         function namNhuan() {
+         let year = document.getElementById('nam').value;
+            if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+
+                true;
+         }}
+
+
+        function aaDa() {
+            let month = document.getElementById('thang').value;
+            if (namNhuan()) {
+
+                switch (month) {
+                    case 1:
+                    case 3:
+                    case 5:
+                    case 7:
+                    case 8:
+                    case 10:
+                    case 12:
+                        alert('thang co 31 ngay');
+                        break;
+                    case 4:
+                    case 6:
+                    case 9:
+                        alert('thang co 30 ngay');
+                        break;
+                    case 2:
+                        alert('thang co 29 ngay');
+                        break;
+                }
+
+            } else {
+                switch (month) {
+                    case 1:
+                    case 3:
+                    case 5:
+                    case 7:
+                    case 8:
+                    case 10:
+                    case 12:
+                        alert('thang co 31 ngay');
+                        break;
+                    case 4:
+                    case 6:
+                    case 9:
+                        alert('thang co 30 ngay');
+                        break;
+                    case 2:
+                        alert('thang co 28 ngay');
+                        break;
+
+                }
+            }
+        }
+
+</script>
+</html>

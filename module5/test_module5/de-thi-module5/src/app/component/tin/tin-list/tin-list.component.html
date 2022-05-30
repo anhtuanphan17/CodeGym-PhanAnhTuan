@@ -1,0 +1,122 @@
+<a [routerLink]="['/tin/create']">
+  <button>Dang Tin</button>
+</a>
+
+<!--o tim kiem-->
+
+<div id="main-container">
+  <div class="row d-flex justify-content-start align-items-bottom mb-2">
+    <div class="col-2">
+      <label>Diện tích:</label>
+      <input #dienTichs [ngModel]="dienTich" class="form-control " type="text">
+    </div>
+    <div class="col-2">
+      <label>Giá </label>
+      <input #gias [ngModel]="gia" class="form-control " type="text">
+    </div>
+    <div class="col-2">
+      <label>Hướng</label>
+      <input #huongs [ngModel]="huong" class="form-control " type="text">
+    </div>
+    <button class="col-2" Btn rounded="true" gradient="purple"
+            (click)="search(dienTichs.value,gias.value,huongs.value)">Tìm Kiếm
+    </button>
+
+    <table class="table stripe">
+      <tr>
+        <th>STT</th>
+        <th>Tiêu đề</th>
+        <th>Loại bài viết</th>
+        <th>Danh Mục</th>
+        <th>Ngày Đăng</th>
+        <th>Trạng Thái</th>
+        <th>Diện Tích</th>
+        <th>Hướng</th>
+        <th>Giá</th>
+        <th colspan="2" class="text-center">Action</th>
+      </tr>
+      <tr *ngFor="let tin of tins; index as i">
+        <td>{{i + 1}}</td>
+        <td>{{tin.tuaDe}}</td>
+        <td ngSwitch="{{tin.loaiBaiViet}}">
+          <span *ngSwitchCase="1">Can Ban</span>
+          <span *ngSwitchCase="2">Can Mua</span>
+          <span *ngSwitchCase="3">Cho Thue</span>
+          <span *ngSwitchCase="4">Can thue </span>
+        </td>
+        <td>{{tin.danhMuc.tenDanhMuc == 1 ? 'Nha Dat' : 'Chung cu'}}</td>
+        <td>{{tin.ngayDang}}</td>
+        <td>{{tin.trangThai}}</td>
+        <td>{{tin.dienTich}}</td>
+        <td>{{tin.huong}}</td>
+        <td>{{tin.gia}}</td>
+        <td>
+          <a [routerLink]="['/tin/edit',tin.id]">Edit</a>
+
+        </td>
+        <td><a (click)="onDeleteTin(tin)">
+          <button class="btn btn-primary">Delete</button>
+        </a></td>
+      </tr>
+    </table>
+  </div>
+
+<!--  phan trang-->
+
+  <div class="d-flex flex-center">
+    <nav class="mt-2" aria-label="...">
+      <ul class="pagination">
+        <li class="page-item">
+          <button [disabled]="page<=0" class="page-link" (click)="previous()">Previous</button>
+        </li>
+        <li class="page-item active" aria-current="page">
+          <span class="page-link">{{page + 1}}</span>
+        </li>
+        <li class="page-item">
+          <a class="page-link">{{totalPages}}</a>
+        </li>
+        <li class="page-item">
+          <button [disabled]="page>=totalPages-1" class="page-link" (click)="next()">Next</button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+
+<!--modal xoa-->
+
+<div
+  class="modal fade"
+  id="deleteModal"
+  data-backdrop="static"
+  data-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="staticBackdropLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-titl" id="staticBackdropLAbel">Do you want to delete? </h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">X</button>
+                    <input type="hidden" id="customerDelete_id" name="customer_id">-->
+      </div>
+      <div class="modal-body" id="customer_delete">
+        <div class="modal-body">
+          <div *ngIf="check">
+            <p>Tua De : {{deletedTin.tuaDe}}</p>
+            <p>Loai tin : {{deletedTin.loaiBaiViet}}</p>
+          </div>
+
+          <div class="modal-footer">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button #closeModal type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button (click)="delete(closeModal)" type="button" class="btn btn-primary" id="delete_customer_id">ok</button>
+      </div>
+    </div>
+  </div>
+</div>

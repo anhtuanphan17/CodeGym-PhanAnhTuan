@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chi So Can Nang Co </title>
+</head>
+<body>
+<p>Weigth<input id="weight"  type ="text"></p>
+<p>Height<input id="height" type="text"</p>
+<p><button onclick="kq()">submit</button> </p>
+
+</body>
+<script>
+        function kq() {
+            let w = parseFloat(document.getElementById('weight').value);
+            let h = parseFloat(document.getElementById('height').value);
+            let b = w / (h * h );
+            let result =b<18.5?'Underweight':b<25?'Nomal':b<30?'Overweight':'Obese';
+
+            alert(result);
+        }
+
+
+
+</script>
+
+</html>

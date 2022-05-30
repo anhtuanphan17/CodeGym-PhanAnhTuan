@@ -1,0 +1,14 @@
+<a [routerLink]="['/category/create']">Create Form</a>
+<table class="table stripe">
+  <tr>
+    <th>Id</th>
+    <th>Category Name</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  <tr *ngFor="let category of categories; i as index">
+    <td>{{category.id}}</td>
+    <td>{{category.categoryName}}
+    <td><a [routerLink]="['category-list/edit',category.id]">Edit</a></td>
+  </tr>
+</table>

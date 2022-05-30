@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2: Viết hàm tính diện tích, hàm tính chu vi hình tròn</title>
+</head>
+<body>
+<script>
+    let banKinh = parseInt(prompt());
+
+    function tinhDienTichHinhTron(a) {
+        let S = (a ** 2) * 3.14;
+        document.write(S);
+    }
+
+    function tinhChuViHinhTron(a) {
+        let C = 2 * a * 3.14;
+        document.write(C);
+    }
+
+    tinhChuViHinhTron(banKinh) ;
+    document.write('<br>');
+    tinhDienTichHinhTron(banKinh);
+
+</script>
+</body>
+</html>

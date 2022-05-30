@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>nếu V thuộc mảng đã cho xoá V khỏi mảng </title>
+</head>
+<body>
+<script>
+
+    let size;
+    let x=new Array(size);
+
+    do{
+        size = prompt('Nhap vao so luong phan tu cua mang','');
+        check = parseInt(size)==size&&0<size<=20;
+    }while(!check)
+
+
+
+    for(let i=0;i<size;i++){
+        x[i]=parseInt(prompt('Nhap vao gia tri thu ' + i));
+    }
+    document.write(x);
+
+    let V= parseInt(prompt('So ban can tim trong mang'));
+
+
+    if(x.indexOf(V)!=-1){
+        x.splice(x.indexOf(V),1) ;
+   }else{
+        alert('V is not in the array');
+    }
+
+    document.write("<br>" + x);
+
+
+
+
+</script>
+</body>
+</html>

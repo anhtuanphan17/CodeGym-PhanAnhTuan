@@ -1,0 +1,59 @@
+<h1>Danh sách sản phẩm</h1>
+<a routerLink="/product/create">Tạo mới sản phẩm</a>
+<div class="container" id="main-container">
+  <table>
+    <tr>
+      <td>STT</td>
+      <td>Tên</td>
+      <td>Giá</td>
+      <td>Date</td>
+      <td>Category</td>
+      <td colspan="2"></td>
+    </tr>
+    <tr *ngFor="let product of products; index as i">
+      <td>{{i + 1}}</td>
+      <td>{{product.name}}</td>
+      <td>{{product.price}}</td>
+      <td>{{product.date}}</td>
+      <td>{{product.category.categoryName}}</td>
+      <td><a [routerLink]="['/product-component/edit',product.id]">Edit</a></td>
+      <td><a (click)="onOpenDeleteModal(product)" style="color: darkviolet">delete</a></td>
+    </tr>
+  </table>
+</div>
+
+
+<div
+  class="modal fade"
+  id="deleteModal"
+  data-backdrop="static"
+  data-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="staticBackdropLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">xóa khách hàng </h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+        <!--                <input type="hidden" id="customerDelete_id" name="customer_id">-->
+      </div>
+      <div class="modal-body" id="customer_delete">
+        <div class="modal-body">
+          <div *ngIf="check">
+            <p>bạn có muốn xóa san pham : {{deletedProduct.name}}</p>
+            <p>khách hàng có mã là : {{deletedProduct.id}}</p>
+          </div>
+
+          <div class="modal-footer">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button #closeModal type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button (click)="delete(closeModal)" type="button" class="btn btn-primary" id="delete_customer_id">ok</button>
+      </div>
+    </div>
+  </div>
+</div>

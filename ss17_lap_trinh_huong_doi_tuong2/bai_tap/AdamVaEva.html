@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adam va Eva</title>
+</head>
+<body>
+<script>
+
+
+    class Apple {
+        constructor() {
+            this.weight = 10;
+        }
+
+        decreaseApple() {
+            this.weight--;
+
+        }
+
+        isEmpty() {
+            if (this.weight != 0) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+        getWeightApple() {
+            return this.weight;
+        }
+
+    }
+
+
+    class Human {
+        constructor(name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+        }
+
+        isMale() {
+            if (this.gender == 'male') {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        setGender(gender) {
+            this.gender = gender;
+        }
+
+        checkApple(apple) {
+            if (apple.getWeightApple() > 0) {
+                return true;
+            } else {
+               return false;
+            }
+        }
+
+        eat(apple) {
+            if (this.checkApple(apple)) {
+                this.weight++;
+                apple.decreaseApple();
+            }
+
+        }
+
+        say(saySomething) {
+            alert(saySomething);
+        }
+
+        getName() {
+            return this.name;
+        }
+        setName(name){
+            this.name=name;
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+
+        setWeight(weight) {
+            this.weight = weight;
+        }
+    }
+
+
+    let apple= new Apple();
+    let adam = new Human("Ass","male",60);
+    let eva =new Human("Eva","Female",50);
+    adam.setName("Adam");
+    console.log(adam);
+    console.log(eva);
+    adam.eat(apple);
+    adam.say('hello anh em');
+    document.write(adam.getWeight());
+    document.write('<br>');
+    document.write(apple.getWeightApple());
+    eva.eat(apple);
+    console.log(eva);
+
+</script>
+
+</body>
+</html>

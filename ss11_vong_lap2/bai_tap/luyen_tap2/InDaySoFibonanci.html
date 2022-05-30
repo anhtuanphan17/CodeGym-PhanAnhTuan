@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>In Day So Fibonanci</title>
+</head>
+<body>
+<script>
+    //0 1 1 2 3 5 8 13 21 34 55...
+
+
+    let xn = 0;
+    let x1 = 0;
+    let x2 = 1;
+
+    for (let i = 0; i < 100; i++) {
+        if (i <= 1) {
+            xn = i;
+        } else {
+
+            xn = x1 + x2;
+            x1 = x2;
+            x2 = xn;
+
+
+        }document.write(xn + ',');
+    }
+
+
+</script>
+
+</body>
+</html>

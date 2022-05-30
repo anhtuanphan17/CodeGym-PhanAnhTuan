@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tìm xem V có nằm trong mảng số nguyên không</title>
+</head>
+<body>
+<script>
+    let size;
+    let x=new Array(size);
+
+    do{
+        size = prompt('Nhap vao so luong phan tu cua mang','');
+        check = parseInt(size)==size&&0<size<=20;
+    }while(!check)
+
+
+
+    for(let i=0;i<size;i++){
+        x[i]=parseInt(prompt('Nhap vao gia tri thu ' + i));
+    }
+    document.write(x);
+
+    let V= parseInt(prompt('So ban can tim trong mang'));
+
+    if(x.indexOf(V)!=-1){
+        alert('V is in the array');
+    }else{
+        alert('V is not in the array');
+    }
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

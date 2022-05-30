@@ -1,0 +1,71 @@
+<h1>Product List</h1>
+
+<a [routerLink]="['/product/create']">Add new product</a>
+
+<input type="text" class="form-control" name="name" [(ngModel)]="name" (ngModelChange)="getAllProduct()"
+       placeholder="Enter name to search">
+<input type="text" class="form-control" name="name" [(ngModel)]="price" (ngModelChange)="getAllProduct()"
+       placeholder="Enter name to search">
+
+<div id="main-container">
+  <table class="table stripe">
+    <tr>
+      <td>No.</td>
+      <td>Name</td>
+      <td>Price</td>
+      <td>Quantity</td>
+      <td>Color</td>
+      <td>Category</td>
+      <td colspan="2">Action</td>
+    </tr>
+    <tr *ngFor="let product of products| paginate : {itemsPerPage : 2 , currentPage :p}; index as i">
+      <td>{{i + 1}}</td>
+      <td>{{product.productName}}</td>
+      <td>{{product.price}}</td>
+      <td>{{product.quantity}}</td>
+      <td>{{product.color}}</td>
+      <td>{{product.category.categoryName}}</td>
+      <td><a [routerLink]="['/product/edit',product.id]">Edit</a></td>
+      <td><a (click)="onDeleteProduct(product)">
+        <button class="btn btn-primary">Delete</button>
+      </a></td>
+    </tr>
+  </table>
+</div>
+<pagination-controls (pageChange)="p=$event"></pagination-controls>
+
+
+<div
+  class="modal fade"
+  id="deleteModal"
+  data-backdrop="static"
+  data-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="staticBackdropLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-titl" id="staticBackdropLAbel">Do you want to delete? </h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">X</button>
+        <!--                <input type="hidden" id="customerDelete_id" name="customer_id">-->
+      </div>
+      <div class="modal-body" id="customer_delete">
+        <div class="modal-body">
+          <div *ngIf="check">
+            <p>Product Name : {{deletedProduct.productName}}</p>
+            <p>Price : {{deletedProduct.price}}</p>
+          </div>
+
+          <div class="modal-footer">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button #closeModal type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button (click)="delete(closeModal)" type="button" class="btn btn-primary" id="delete_customer_id">ok</button>
+      </div>
+    </div>
+  </div>
+</div>

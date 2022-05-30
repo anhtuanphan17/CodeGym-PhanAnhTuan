@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> phần tử được nối từ hai mảng b và a vào mảng c.</title>
+</head>
+<body>
+<script>
+    let size1;
+    let size2;
+
+    let x = new Array(size1);
+    let y = new Array(size2);
+
+    do {
+        size = prompt('Nhap vao so luong phan tu cua mang 1 ', '');
+        check = parseInt(size) == size && 0 < size <= 20;
+    } while (!check)
+
+    for (let i = 0; i < size; i++) {
+        x[i] = prompt('Nhap vao gia tri thu ' + i);
+    }
+
+    do {
+        size = prompt('Nhap vao so luong phan tu cua mang 2 ', '');
+        check = parseInt(size) == size && 0 < size <= 20;
+    } while (!check)
+
+
+    for (let i = 0; i < size; i++) {
+        y[i] = prompt('Nhap vao gia tri thu ' + i);
+    }
+
+    document.write(x);
+    document.write('<br>' + y);
+
+    let c = x.concat(y);
+    document.write('<br> '+ c);
+
+
+</script>
+</body>
+</html>

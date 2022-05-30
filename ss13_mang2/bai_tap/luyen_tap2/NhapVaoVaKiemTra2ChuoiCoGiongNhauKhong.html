@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>kiểm tra xem hai chuỗi có giống nhau hay không.</title>
+</head>
+<body>
+<script>
+    let size1;
+    let size2;
+
+
+
+
+    do {
+        size1 = prompt('Nhap vao so luong phan tu cua mang 1 ', '');
+        check = parseInt(size1) == size1 && 0 < size1 <= 20;
+    } while (!check);
+
+    let x = new Array(size1);
+
+    for (let i = 0; i < size1; i++) {
+        x[i] = prompt('Nhap vao gia tri thu ' + i);
+    }
+
+    do {
+        size2 = prompt('Nhap vao so luong phan tu cua mang 2 ', '');
+        check = parseInt(size2) == size2 && 0 < size2 <= 20;
+    } while (!check);
+
+    let y = new Array(size2);
+
+
+    for (let i = 0; i < size2; i++) {
+        y[i] = prompt('Nhap vao gia tri thu ' + i);
+    }
+
+
+    document.write(x);
+    document.write('<br>' + y);
+
+    let count = 0;
+    if (size1 === size2) {
+        for (let i = 0; i < size1; i++) {
+            if (x[i] !== y[i]) {
+                alert('2 mang khong giong nhau');
+                break;
+
+            } else {
+                count++;
+            }
+
+        }
+
+
+    } else {
+        alert('2  mang khong giong nhau');
+    }
+
+    if (count == size1) {
+        alert('2 mang giong nhau');
+    }
+
+</script>
+
+</body>
+</html>

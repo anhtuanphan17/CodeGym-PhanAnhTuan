@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> kiểm tra xem ký tự bất kỳ đó có nằm trong mảng không. </title>
+</head>
+<body>
+<script>
+    //Nhap vao 1 mang
+    let size1;
+
+    do {
+        size1 = prompt('Nhap vao so luong phan tu cua mang 1 ', '');
+        check = parseInt(size1) == size1 && 0 < size1 <= 20;
+    } while (!check);
+
+    let x = new Array(size1);
+
+    for (let i = 0; i < size1; i++) {
+        x[i] = prompt('Nhap vao gia tri thu ' + i);
+    }
+
+// nhap vao 1 ky tu
+
+    let V = prompt('Nhap vao gia tri can tim');
+
+ //kiem tra V co nam trong mang x khong
+
+ function kiemTraVCoNamTrongMangx(x,V) {
+    let count=0;
+     for(let i=0;i<x.length;i++){
+        if(V==x[i]){
+            alert(V +'thuoc mang x');
+            count++;
+        }
+
+    }alert(' so lan lap lai cua '+ V +' la ' +count);
+
+
+ }
+
+//goi ham
+    kiemTraVCoNamTrongMangx(x,V);
+
+
+
+</script>
+
+</body>
+</html>

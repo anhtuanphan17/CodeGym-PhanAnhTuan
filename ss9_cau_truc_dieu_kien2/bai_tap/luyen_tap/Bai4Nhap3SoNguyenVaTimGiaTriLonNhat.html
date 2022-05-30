@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nhap 3 so va tim gia tri lon nhat</title>
+</head>
+<body>
+<script>
+
+
+    let a = parseInt(prompt('a', ''));
+    let b = parseInt(prompt('b', ''));
+    let c = parseInt(prompt('c', ''));
+
+    if (a > b) {
+        if (a > c) {
+            alert('max la a');
+        } else if (a == c) {
+            alert('max la a va c');
+        }
+    } else if (b > a) {
+        if (b > c) {
+            alert('Max =b');
+        } else if (b == c) {
+            alert('Max =b va c')
+        }
+
+    } else if (c > a) {
+        if (c > b) {
+            alert('max=c');
+        } else if (c == b) {
+            alert('Max = b va c')
+        }
+
+    }
+
+
+</script>
+
+</body>
+</html>

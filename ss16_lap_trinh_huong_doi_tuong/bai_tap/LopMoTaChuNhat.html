@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp mô tả hình chữ nhật</title>
+</head>
+<body>
+<p id="kq"></p>
+<canvas style ="background: aliceblue" id="DemoCanvas" width="500" height="600"></canvas>
+<script>
+
+    class Rectangle {
+        constructor(width, height) {
+            this.width = width;
+            this.height = height;
+        }
+
+        circuit() {
+            return (this.width + this.height) * 2;
+        }
+
+        area() {
+            return this.width * this.height;
+        }
+
+        drawRectangle(DemoCanvas,x,y) {
+
+            let ctx = DemoCanvas.getContext('2d');
+            ctx.fillRect(x, y, this.width, this.height);
+
+        }
+
+    }
+
+
+    let hinhChuNhat = new Rectangle(200, 100);
+    let hinhChuNhat1 = new Rectangle(200, 100);
+    let chuVi = hinhChuNhat.circuit();
+    let dienTich = hinhChuNhat.area();
+
+    document.getElementById('kq').innerText= "Chu vi: " + chuVi + "Dien tich:  " + dienTich;
+
+    hinhChuNhat.drawRectangle(DemoCanvas,10,10);
+    hinhChuNhat1.drawRectangle(DemoCanvas,200,200);
+
+
+
+</script>
+
+</body>
+</html>

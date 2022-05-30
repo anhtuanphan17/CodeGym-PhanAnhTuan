@@ -1,0 +1,14 @@
+A. Các cách deploy, lớp có thể tham khảo:
+	- Với static web:
+	1. Deploy lên Github Page dựa project có sẵn ở github.
+	Tham khảo bài bên dưới:
+	https://viblo.asia/p/host-mot-static-site-don-gian-voi-github-page-Ljy5Vp7VZra
+	2. Dùng Glitch:
+	https://toidicodedao.com/2020/10/27/glitch-build-web-site/
+	- Với dynamic web:
+	1. Tìm hiểu cách deploy ở Heroku.
+	https://levunguyen.com/devops/2021/05/13/spring-database-heroku/
+	2. Tìm hiểu cách build server ở amazon aws.
+
+B. CI/CD
+https://levunguyen.com/devops/2021/05/04/jenkins/

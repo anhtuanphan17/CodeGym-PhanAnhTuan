@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dem so ki tu so trong mang</title>
+</head>
+<body>
+<script>
+    let size;
+    let x = new Array(size);
+
+    do {
+        size = prompt('Nhap vao so luong phan tu cua mang', '');
+        check = parseInt(size) == size && 0 < size <= 20;
+    } while (!check)
+
+
+    for (let i = 0; i < size; i++) {
+        x[i] = prompt('Nhap vao gia tri thu ' + i);
+    }
+
+    document.write(x);
+
+    let daySo = '0123456789';
+    let count = 0;
+    let result;
+    for (let i = 0; i < size; i++) {
+        if (daySo.indexOf(x[i]) != -1) {
+            count++;
+        }
+
+    }document.write('<br>'+ count);
+
+
+
+
+</script>
+
+</body>
+</html>

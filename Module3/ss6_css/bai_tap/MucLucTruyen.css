@@ -1,0 +1,23 @@
+body{
+    background-image: url("https://gamek.mediacdn.vn/133514250583805952/2021/12/2/vegeta-and-bulma-1638436998855694293533.jpg");
+    background-size: 90%;
+
+
+}
+
+h1{
+    font-family: inherit;
+    color: blue;
+    font-size: 20px ;
+    text-align: center;
+
+}
+
+
+.abc h5 {
+    color: red;
+    text-align: center;
+}
+.abc h5 a {
+    color: red;
+}

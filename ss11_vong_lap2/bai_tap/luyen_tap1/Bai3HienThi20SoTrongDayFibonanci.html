@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hien Thi 20 So trong Day fibonanci</title>
+</head>
+<body>
+<script>
+
+    // 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55 …
+    // 1, 2, n
+    //    1  2
+    let xn = 0;
+    let x1 = 0;
+    document.write(x1 + ',');
+    let x2 = 1;
+    document.write(x2 + ',');
+
+    for (let i = 3; i <= 20; i++) {
+
+        xn = x1 + x2;
+
+        x1 = x2;
+        x2 = xn;
+
+
+
+
+
+        document.write(xn + ',');
+    }
+
+
+</script>
+
+
+</body>
+</html>

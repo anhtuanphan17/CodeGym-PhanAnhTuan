@@ -1,0 +1,109 @@
+<app-navigataion></app-navigataion>
+<div
+  class="p-5 text-center bg-image"
+  style="
+      background-image: url('https://freetuts.net/upload/tut_post/images/2021/06/29/4045/anh-wallpaperup-full-hp-4k-chat-luong-cao.jpg');
+      height: 150px;
+      margin-top: 0;
+    "
+>
+  <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+    <div class="d-flex justify-content-center align-items-center h-100">
+      <div class="text-white">
+        <h1 class="mb-3">List Service</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="display: flex; ">
+  <div style="width: 16%">
+    <a [routerLink]="['/service/create']">
+      <button class="btn" style="background-color: #046056; color: white;height: 40px">Create New Service</button>
+    </a>
+  </div>
+  <div style="width: 100%;">
+    <input type="text" class="form-control" name="name" [(ngModel)]="name" (ngModelChange)="search()"
+           placeholder="Enter name to search">
+  </div>
+</div>
+<div id="main-container">
+  <section class="text-center mb-4 container" style="margin-top: 30px">
+    <div class="row wow fadeIn">
+      <div class="col-lg-4 col-md-6 mb-4" *ngFor="let facility of facilities">
+        <div class="card">
+
+          <div sclass="view overlay">
+            <img
+              src="{{facility.serviceImage}}"
+              class="card-img-top" alt="">
+            <a>
+              <div class="mask rgba-white-slight"></div>
+            </a>
+          </div>
+          <div class="card-body text-center">
+            <a href="" class="grey-text">
+              <h5>{{facility.serviceName}}</h5>
+            </a>
+            <h5>
+              <strong>
+                <small>Area: {{facility.serviceArea}} m<sup>2</sup></small>
+              </strong>
+            </h5>
+
+            <h4 class="blue-text">
+              <strong>{{facility.serviceCost}}$</strong>
+            </h4>
+            <br>
+            <div style="display: flex; justify-content: center">
+              <a [routerLink]="['/service/edit/',facility.id]">
+                <button style="width: 100px" class="btn btn-primary btn-rounded btn-sm my-0">Edit</button>
+              </a>
+
+              <a (click)="onOpenDeleteModal(facility)">
+                <button style="width: 100px" class="btn btn-primary btn-rounded btn-sm my-0">Delete</button>
+              </a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!--Modal-->
+<div
+  class="modal fade"
+  id="deleteModal"
+  data-backdrop="static"
+  data-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="staticBackdropLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-titl" id="staticBackdropLAbel">Do you want to delete? </h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+        <!--                <input type="hidden" id="customerDelete_id" name="customer_id">-->
+      </div>
+      <div class="modal-body" id="customer_delete">
+        <div class="modal-body">
+          <div *ngIf="check">
+            <p>Customer Name : {{deletedFacility.serviceName}}</p>
+            <p>Customer Code : {{deletedFacility.serviceCode}}</p>
+          </div>
+
+          <div class="modal-footer">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button #closeModal type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button (click)="delete(closeModal)" type="button" class="btn btn-primary" id="delete_customer_id">ok</button>
+      </div>
+    </div>
+  </div>
+</div>
+

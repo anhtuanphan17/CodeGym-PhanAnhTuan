@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh Thue Thu Nhap Ca Nhan</title>
+</head>
+<body>
+<script>
+    let thuNhap=parseFloat(prompt('Nhap thu nhap cua ban vao: (trieu/thang)',''));
+
+    let thueSuat=0;
+
+
+    if(thuNhap>52){
+        thueSuat=0.3;
+    }else if(thuNhap>32){
+        thueSuat=0.25;
+    }else if(thuNhap>18){
+        thueSuat=0.2;
+    }else if(thuNhap>10){
+        thueSuat=0.15;
+    }else if (thuNhap>5){
+        thueSuat=0.1;
+    }else{
+        thueSuat=0.05;
+    }
+
+    let tienCanDong=thuNhap*thueSuat;
+    alert(tienCanDong);
+
+
+
+</script>
+</body>
+</html>

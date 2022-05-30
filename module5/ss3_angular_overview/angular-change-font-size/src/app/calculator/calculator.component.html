@@ -1,0 +1,15 @@
+<p>calculator works!</p>
+
+<label>first number</label>
+<input type="text" id="firstNumber" #element1>
+<label>Second number</label>
+<input type="text" id="secondNumber" #element2>
+
+<p></p>
+
+<input type="submit" value="+" (click)="plus(element1.value, element2.value)">
+<input type="submit" value="-" (click)="subject(element1.value, element2.value)">
+<input type="submit" value="*" (click)="multiple(element1.value, element2.value)">
+<input type="submit" value="/" (click)="divide(element1.value, element2.value)">
+
+<p> {{result}}</p>

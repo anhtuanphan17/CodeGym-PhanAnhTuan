@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 6: Viết hàm nhận vào một số, kiểm tra xem nếu số đưa vào có phải là nguyên dương không</title>
+</head>
+<body>
+<script>
+
+function kiemTraSoNguyenDuong(a) {
+    let check=!isNaN(a)&&Math.floor(a)==a&&a>0;
+    if(check){alert(true);
+    }else {
+        alert(false) ;
+    }
+
+}
+
+ let input = prompt();
+kiemTraSoNguyenDuong(input);
+
+
+</script>
+</body>
+</html>

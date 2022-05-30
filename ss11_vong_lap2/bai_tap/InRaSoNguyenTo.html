@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>In ra 20 so nguyen to</title>
+</head>
+<body>
+<script>
+
+    // nhap vao so n ( so luong so nguyen to can xuat ra)
+    //xuat ra tat ca cac so nguyen to bat dau tu 'n'
+    // moi lan xuat ra kiem tra xem do la so nguyen to thu may
+    // du 20 so thi ket thuc chuong trinh
+
+    let n=prompt('nhap vao so n','');
+    let count = 0;
+
+
+    for (let i = 2; i>0; i++) {
+        let flag =true;
+        for (let j = 2; j<=i/2; j++) {
+
+            if (i % j === 0) {
+                flag = false;
+                break;
+            }
+        }
+        if (flag) {
+            count++;
+            console.log(i);
+        }
+
+        if(count>=n){
+            break;
+        }
+    }
+
+
+</script>
+
+</body>
+</html>

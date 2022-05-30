@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dao Nguoc Mang</title>
+</head>
+<body>
+<script>
+    let x = new Array(2);
+
+    function daoNguocMang(a) {
+        let temp = 0;
+        temp = a[0];
+        a[0] = a[1];
+        a[1] = temp;
+
+    }
+
+
+    for (let i = 0; i < 2; i++) {
+        x[i] = prompt();
+
+    }
+    document.write(x);
+
+    daoNguocMang(x);
+    document.write('<br>')
+    document.write(x);
+
+
+</script>
+</body>
+</html>

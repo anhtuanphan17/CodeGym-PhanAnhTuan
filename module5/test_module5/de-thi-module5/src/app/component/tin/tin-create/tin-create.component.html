@@ -1,0 +1,289 @@
+<div class="col-8 mx-auto" id="main-container">
+  <h1>Dang Tin</h1>
+
+  <form [formGroup]="tinForm" (ngSubmit)="submit()" class="row g-3">
+    <input formControlName="id" type="hidden">
+    <div class="col-md-6">
+      <label class="form-label">Danh Muc</label>
+      <select  formControlName="danhMuc" name="danhMuc" class="form-control">
+        <option *ngFor="let danhMuc of danhMucList" [ngValue]="danhMuc">{{danhMuc.tenDanhMuc}}</option>
+      </select>
+
+      <div
+        *ngIf="tinForm.controls.danhMuc.invalid && (tinForm.controls.danhMuc.dirty
+         || tinForm.controls.danhMuc.touched|| tinForm.controls.danhMuc.errors?.empty)">
+        <small
+          *ngIf="tinForm.controls.danhMuc.errors?.required || tinForm.controls.danhMuc.errors?.empty"
+          class="form-text text-danger">Require not empty.</small>
+      </div>
+    </div>
+
+
+    <div class="col-md-6">
+      <!--    input-->
+      <!--      <input type="hidden" formControlName="id">-->
+      <label class="form-label">Vung Mien</label>
+      <input formControlName="vungMien" type="text" class="form-control" name="vungMien" id="vungMien">
+
+      <!--          hien thi loi-->
+      <!--      <div-->
+      <!--        *ngIf="tinForm.controls.productName.invalid && (tinForm.controls.productName.dirty || tinForm.controls.productName.touched|| tinForm.controls.category.errors?.empty)">-->
+      <!--        &lt;!&ndash;        <small *ngIf="productForm.controls.productName.hasError('pattern')" class="form-text text-danger">Wrong format,&ndash;&gt;-->
+      <!--        &lt;!&ndash;          ex:&ndash;&gt;-->
+      <!--        &lt;!&ndash;          KH-0123</small>&ndash;&gt;-->
+      <!--        <small-->
+      <!--          *ngIf="tinForm.controls.productName.hasError('required') || tinForm.controls.productName.errors.empty"-->
+      <!--          class="form-text text-danger">Require not empty.</small>-->
+      <!--      </div>-->
+    </div>
+
+
+    <div class="col-md-6">
+      <label class="form-label">Dai Dien</label>
+      <select formControlName="daiDien" name="daiDien" class="form-control">
+        <option selected value="caNhan">Ca Nhan</option>
+        <option value="congTy">Cong Ty</option>
+      </select>
+
+      <div
+        *ngIf="tinForm.controls.daiDien.invalid && (tinForm.controls.daiDien.dirty
+               || tinForm.controls.daiDien.touched|| tinForm.controls.daiDien.errors?.empty)">
+        <small
+          *ngIf="tinForm.controls.daiDien.errors?.required || tinForm.controls.daiDien.errors?.empty"
+          class="form-text text-danger">Require not empty.</small>
+      </div>
+    </div>
+
+
+    <div class="col-md-6">
+      <label class="form-label">Loai Bai Viet</label>
+      <select formControlName="loaiBaiViet" name="loaiBaiViet" class="form-control">
+        <option selected value="1">Can Ban</option>
+        <option value="2">Can Mua</option>
+        <option value="3">Cho Thue</option>
+        <option value="4">Can Thue</option>
+      </select>
+
+      <div
+        *ngIf="tinForm.controls.loaiBaiViet.invalid && (tinForm.controls.loaiBaiViet.dirty
+               || tinForm.controls.loaiBaiViet.touched|| tinForm.controls.loaiBaiViet.errors?.empty)">
+        <small
+          *ngIf="tinForm.controls.loaiBaiViet.errors?.required || tinForm.controls.loaiBaiViet.errors?.empty"
+          class="form-text text-danger">Require not empty.</small>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <label class="form-label">Tinh Trang</label>
+      <select formControlName="tinhTrang" name="tinhTrang" class="form-control">
+        <option selected value="moi">Moi</option>
+        <option value="daSuDung">Da Su Dung</option>
+      </select>
+
+      <div
+        *ngIf="tinForm.controls.tinhTrang.invalid && (tinForm.controls.tinhTrang.dirty
+               || tinForm.controls.tinhTrang.touched|| tinForm.controls.tinhTrang.errors?.empty)">
+        <small
+          *ngIf="tinForm.controls.tinhTrang.errors?.required || tinForm.controls.tinhTrang.errors?.empty"
+          class="form-text text-danger">Require not empty.</small>
+      </div>
+    </div>
+
+
+    <div class="col-md-6">
+      <!--    input-->
+      <!--      <input type="hidden" formControlName="id">-->
+      <label class="form-label">Dia Chi</label>
+      <input formControlName="diaChi" type="text" class="form-control" name="diaChi" id="diaChi">
+
+      <div
+        *ngIf="tinForm.controls.diaChi.invalid && (tinForm.controls.diaChi.dirty || tinForm.controls.diaChi.touched|| tinForm.controls.diaChi.errors?.empty)">
+        <!--        <small *ngIf="productForm.controls.productName.hasError('pattern')" class="form-text text-danger">Wrong format,-->
+        <!--          ex:-->
+        <!--          KH-0123</small>-->
+        <small
+          *ngIf="tinForm.controls.diaChi.hasError('required') || tinForm.controls.diaChi.errors.empty"
+          class="form-text text-danger">Require not empty.</small>
+      </div>
+    </div>
+
+
+    <div class="col-md-6">
+      <!--    input-->
+      <!--      <input type="hidden" formControlName="id">-->
+      <label class="form-label">Dien Tich</label>
+      <input formControlName="dienTich" type="text" class="form-control" name="dienTich" id="dienTich">
+
+      <div
+        *ngIf="tinForm.controls.dienTich.invalid && (tinForm.controls.dienTich.dirty || tinForm.controls.dienTich.touched|| tinForm.controls.dienTich.errors?.empty)">
+        <!--        <small *ngIf="productForm.controls.productName.hasError('pattern')" class="form-text text-danger">Wrong format,-->
+        <!--          ex:-->
+        <!--          KH-0123</small>-->
+        <small
+          *ngIf="tinForm.controls.dienTich.hasError('required') || tinForm.controls.dienTich.errors.empty"
+          class="form-text text-danger">Require not empty.</small>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <!--    input-->
+      <!--      <input type="hidden" formControlName="id">-->
+      <label class="form-label">Huong</label>
+      <input formControlName="huong" type="text" class="form-control" name="huong" id="huong">
+
+      <div
+        *ngIf="tinForm.controls.huong.invalid && (tinForm.controls.huong.dirty || tinForm.controls.huong.touched|| tinForm.controls.huong.errors?.empty)">
+        <!--        <small *ngIf="productForm.controls.productName.hasError('pattern')" class="form-text text-danger">Wrong format,-->
+        <!--          ex:-->
+        <!--          KH-0123</small>-->
+        <small
+          *ngIf="tinForm.controls.huong.hasError('required') || tinForm.controls.huong.errors.empty"
+          class="form-text text-danger">Require not empty.</small>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <!--    input-->
+      <!--      <input type="hidden" formControlName="id">-->
+      <label class="form-label">Tua De</label>
+      <input formControlName="tuaDe" type="text" class="form-control" name="tuaDe" id="tuaDe">
+
+      <!--    hien thi loi-->
+      <!--      <div-->
+      <!--        *ngIf="productForm.controls.productName.invalid && (productForm.controls.productName.dirty || productForm.controls.productName.touched|| productForm.controls.category.errors?.empty)">-->
+      <!--        &lt;!&ndash;        <small *ngIf="productForm.controls.productName.hasError('pattern')" class="form-text text-danger">Wrong format,&ndash;&gt;-->
+      <!--        &lt;!&ndash;          ex:&ndash;&gt;-->
+      <!--        &lt;!&ndash;          KH-0123</small>&ndash;&gt;-->
+      <!--        <small-->
+      <!--          *ngIf="productForm.controls.productName.hasError('required') || productForm.controls.productName.errors.empty"-->
+      <!--          class="form-text text-danger">Require not empty.</small>-->
+      <!--      </div>-->
+    </div>
+
+
+    <div class="col-md-6">
+      <!--    input-->
+      <!--      <input type="hidden" formControlName="id">-->
+      <label class="form-label">Noi Dung</label>
+      <input formControlName="noiDung" type="text" class="form-control" name="noiDung" id="noiDung">
+
+      <!--    hien thi loi-->
+      <!--      <div-->
+      <!--        *ngIf="productForm.controls.productName.invalid && (productForm.controls.productName.dirty || productForm.controls.productName.touched|| productForm.controls.category.errors?.empty)">-->
+      <!--        &lt;!&ndash;        <small *ngIf="productForm.controls.productName.hasError('pattern')" class="form-text text-danger">Wrong format,&ndash;&gt;-->
+      <!--        &lt;!&ndash;          ex:&ndash;&gt;-->
+      <!--        &lt;!&ndash;          KH-0123</small>&ndash;&gt;-->
+      <!--        <small-->
+      <!--          *ngIf="productForm.controls.productName.hasError('required') || productForm.controls.productName.errors.empty"-->
+      <!--          class="form-text text-danger">Require not empty.</small>-->
+      <!--      </div>-->
+    </div>
+
+    <div class="col-md-6">
+      <!--    input-->
+      <!--      <input type="hidden" formControlName="id">-->
+      <label class="form-label">Gia</label>
+      <input formControlName="gia" type="text" class="form-control" name="gia" id="gia">
+
+      <!--    hien thi loi-->
+      <!--      <div-->
+      <!--        *ngIf="productForm.controls.productName.invalid && (productForm.controls.productName.dirty || productForm.controls.productName.touched|| productForm.controls.category.errors?.empty)">-->
+      <!--        &lt;!&ndash;        <small *ngIf="productForm.controls.productName.hasError('pattern')" class="form-text text-danger">Wrong format,&ndash;&gt;-->
+      <!--        &lt;!&ndash;          ex:&ndash;&gt;-->
+      <!--        &lt;!&ndash;          KH-0123</small>&ndash;&gt;-->
+      <!--        <small-->
+      <!--          *ngIf="productForm.controls.productName.hasError('required') || productForm.controls.productName.errors.empty"-->
+      <!--          class="form-text text-danger">Require not empty.</small>-->
+      <!--      </div>-->
+    </div>
+
+    <!--    <div class="col-md-6">-->
+    <!--    input-->
+    <!--      <input type="hidden" formControlName="id">-->
+    <!--      <label class="form-label">Ngay Dang</label>-->
+    <input formControlName="ngayDang" type="hidden" class="form-control" name="ngayDang" id="ngayDang">
+
+    <!--    hien thi loi-->
+    <!--      <div-->
+    <!--        *ngIf="productForm.controls.productName.invalid && (productForm.controls.productName.dirty || productForm.controls.productName.touched|| productForm.controls.category.errors?.empty)">-->
+    <!--        &lt;!&ndash;        <small *ngIf="productForm.controls.productName.hasError('pattern')" class="form-text text-danger">Wrong format,&ndash;&gt;-->
+    <!--        &lt;!&ndash;          ex:&ndash;&gt;-->
+    <!--        &lt;!&ndash;          KH-0123</small>&ndash;&gt;-->
+    <!--        <small-->
+    <!--          *ngIf="productForm.controls.productName.hasError('required') || productForm.controls.productName.errors.empty"-->
+    <!--          class="form-text text-danger">Require not empty.</small>-->
+    <!--      </div>-->
+    <!--    </div>-->
+
+    <div class="col-md-6">
+      <!--    input-->
+      <!--      <input type="hidden" formControlName="id">-->
+      <label class="form-label">Trang Thai</label>
+      <input formControlName="trangThai" type="text" class="form-control" name="trangThai" id="trangThai">
+
+      <!--    hien thi loi-->
+      <!--      <div-->
+      <!--        *ngIf="productForm.controls.productName.invalid && (productForm.controls.productName.dirty || productForm.controls.productName.touched|| productForm.controls.category.errors?.empty)">-->
+      <!--        &lt;!&ndash;        <small *ngIf="productForm.controls.productName.hasError('pattern')" class="form-text text-danger">Wrong format,&ndash;&gt;-->
+      <!--        &lt;!&ndash;          ex:&ndash;&gt;-->
+      <!--        &lt;!&ndash;          KH-0123</small>&ndash;&gt;-->
+      <!--        <small-->
+      <!--          *ngIf="productForm.controls.productName.hasError('required') || productForm.controls.productName.errors.empty"-->
+      <!--          class="form-text text-danger">Require not empty.</small>-->
+      <!--      </div>-->
+    </div>
+
+    <div style="display:flex;justify-content: center; width: 100%; margin-top: 20px">
+      <button type="submit" class="btn btn-primary">
+        Create
+      </button>
+
+
+      <a (click)="onCreateTin()">
+        <button class="btn btn-primary">Dang</button>
+      </a>
+
+      <a [routerLink]="['/tin']" style="margin-left: 10px" class="btn btn-primary">
+        Cancel
+      </a>
+
+    </div>
+
+  </form>
+</div>
+
+
+<div
+  class="modal fade"
+  id="deleteModal"
+  data-backdrop="static"
+  data-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="staticBackdropLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-titl" id="staticBackdropLAbel">Ban Co Muon Tao Tin </h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">X</button>
+        <!--                <input type="hidden" id="customerDelete_id" name="customer_id">-->
+      </div>
+      <div class="modal-body" id="customer_delete">
+        <div class="modal-body">
+          <div *ngIf="check">
+            <p>Product Name : {{tinForm.value}}</p>
+            <!--            <p>Price  : {{deletedProduct.price}}</p>-->
+          </div>
+
+          <div class="modal-footer">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button #closeModal type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <a (click)="create(closeModal)" type="button" class="btn btn-primary" id="delete_customer_id">ok</a>
+      </div>
+    </div>
+  </div>
+</div>

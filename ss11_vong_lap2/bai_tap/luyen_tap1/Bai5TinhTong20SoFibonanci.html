@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh tong day so fibonanci</title>
+</head>
+<body>
+<script>
+
+    let xn = 0;
+    let x1 = 0;
+    let x2 = 1;
+    let result=0;
+
+    for (let i = 0; i <= 20; i++) {
+        if (i <= 1) {
+            xn = i;
+
+        } else {
+
+            xn = x1 + x2;
+
+            x1 = x2;
+            x2 = xn;
+        }
+
+        result+=xn;
+
+
+    }
+
+    document.write(result);
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<app-navigataion></app-navigataion>
+<div
+  class="p-5 text-center bg-image"
+  style="
+      background-image: url('https://freetuts.net/upload/tut_post/images/2021/06/29/4045/anh-wallpaperup-full-hp-4k-chat-luong-cao.jpg');
+      height: 150px;
+      margin-top: 0;
+    "
+>
+  <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+    <div class="d-flex justify-content-center align-items-center h-100">
+      <div class="text-white">
+        <h1 class="mb-3">List Contract</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div>
+  <a [routerLink]="['/contract/create']">
+    <button class="btn" style="background-color: #046056; color: white; height: 40px">Create new contract</button>
+  </a>
+</div>
+<div>
+  <table class="table table-striped table-hover">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Contract Start Date</th>
+      <th>Contract End Date</th>
+      <th>Contract Deposit</th>
+      <th>Contract Total Money</th>
+      <th>Employee Name</th>
+      <th>Customer Code</th>
+      <th>Customer</th>
+      <th>Service</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let contract of contracts |paginate : {itemsPerPage : 2 , currentPage :p}; index as i">
+      <td>{{contract.id}}</td>
+      <td>{{contract.contractStartDate | date:'dd/MM/yyyy'}}</td>
+      <td>{{contract.contractEndDate | date:'dd/MM/yyyy'}}</td>
+      <td>{{contract.contractDeposit}}</td>
+      <td>{{contract.contractTotalMoney}}</td>
+      <td>{{contract.employee.employeeName}}</td>
+      <td>{{contract.customer.customerCode}}</td>
+      <td>{{contract.customer.customerName}}</td>
+      <td>{{contract.services.serviceName}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<pagination-controls (pageChange)="p=$event"></pagination-controls>

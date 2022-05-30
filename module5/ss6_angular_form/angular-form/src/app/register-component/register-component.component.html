@@ -1,0 +1,125 @@
+<form class="col-5 mx-auto" [formGroup]="registerForm" (ngSubmit)="submitRegister()">
+  <div class="form-group">
+    <label for="exampleInputEmail1" name="email" class="form-label">Email address</label>
+    <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1"
+           aria-describedby="emailHelp">
+    <div
+      *ngIf="registerForm.get('email').invalid &&(registerForm.controls.email.touched || registerForm.controls.email.dirty)">
+      <small id="emailHelp" class="form-text text-danger" *ngIf="registerForm.controls.email.hasError('required')">please
+        input email
+      </small>
+      <small id="emailHelp1" class="form-text text-danger" *ngIf="registerForm.controls.email.hasError('email')">wrong
+        email format</small>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1" name="password" class="form-label">Password</label>
+    <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1">
+    <div
+      *ngIf="registerForm.get('password').invalid &&(registerForm.controls.password.touched||registerForm.controls.password.dirty)">
+      <p class="form-text text-danger" *ngIf="registerForm.controls.password.hasError('required')">please input password
+      </p>
+      <p class="form-text text-danger" *ngIf="registerForm.controls.password.hasError('minlength')">password need to be
+        at least 6 character
+      </p>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleInputPassword2" name="confirmPassword" class="form-label">Confirm Password</label>
+    <input (change)="validateConfirmPassword()" formControlName="confirmPassword" type="password" class="form-control"
+           id="exampleInputPassword2">
+    <div
+      *ngIf="registerForm.get('confirmPassword').invalid &&(registerForm.controls.password.touched||registerForm.controls.password.dirty)">
+      <small class="form-text text-danger" *ngIf="registerForm.controls.password.hasError('required')">please input
+        password
+      </small>
+      <small class="form-text text-danger" *ngIf="registerForm.controls.password.hasError('minlength')">password need to
+        be at least 6 character
+      </small>
+      <small class="form-text text-danger"
+             *ngIf="registerForm.controls.confirmPassword.hasError('notMatch')">{{registerForm.controls.confirmPassword.errors.notMatch}}
+      </small>
+    </div>
+  </div>
+
+
+  <div class="form-group" style="display: flex; align-items: center; margin-top: 10px;">
+    <label for="country">Country </label>
+    <select formControlName="country" name="country" id="country" aria-label="Default select example">
+      <option selected>VietNam</option>
+      <option value="1">America</option>
+      <option value="2">France</option>
+      <option value="3">Difference</option>
+    </select>
+    <div *ngIf="registerForm.get('country').invalid
+    &&(registerForm.controls.country.touched || registerForm.controls.country.dirty)">
+      <small class="form-text text-danger" *ngIf="registerForm.controls.country.hasError('required')">please select
+        country</small>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="form-label" name="age">Age</label>
+    <input type="text" formControlName="age" name="age" class="form-control">
+    <div *ngIf="registerForm.get('age').invalid
+    &&(registerForm.controls.age.touched || registerForm.controls.age.dirty)">
+      <small class="form-text text-danger" *ngIf="registerForm.controls.age.hasError('required')">age is
+        required</small>
+      <small class="form-text text-danger" *ngIf="registerForm.controls.age.hasError('min')">Age must higher than
+        18</small>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <fieldset class="form-group row">
+      <div>
+        <legend class="col-form-label col-sm-2 float-sm-left pt-0">Gender</legend>
+      </div>
+
+      <div class="col-sm-10" style="display: flex; align-items: center; margin-right: 30px">
+        <div class="form-check" style="margin-left: 30px">
+          <input class="form-check-input" type="radio" formControlName="gender" name="gender" id="gridRadios1" value="1"
+                 checked>
+          <label class="form-check-label" for="gridRadios1">
+            Male
+          </label>
+        </div>
+        <div class="form-check" style="margin-left: 30px">
+          <input class="form-check-input" type="radio" formControlName="gender" name="gender" id="gridRadios2"
+                 value="0">
+          <label class="form-check-label" for="gridRadios2">
+            Female
+          </label>
+        </div>
+        <div class="form-check" style="margin-left: 30px">
+          <input class="form-check-input" type="radio" formControlName="gender" name="gender" id="gridRadios3"
+                 value="3">
+          <label class="form-check-label" for="gridRadios3">
+            Other
+          </label>
+        </div>
+      </div>
+
+      <div *ngIf="registerForm.get('gender').invalid
+              &&(registerForm.controls.gender.touched || registerForm.controls.gender.dirty)">
+        <small class="form-text text-danger" *ngIf="registerForm.controls.gender.hasError('required')">please choose
+          gender</small>
+      </div>
+    </fieldset>
+
+  </div>
+
+  <div class="form-group">
+    <label class="form-label" name="phone">Phone</label>
+    <input type="text" formControlName="phone" name="confirmPassword" class="form-control">
+    <div *ngIf="registerForm.get('phone').invalid
+        &&(registerForm.controls.phone.touched || registerForm.controls.phone.dirty)">
+      <small class="form-text text-danger" *ngIf="registerForm.controls.phone.hasError('required')">please input phone
+        number</small>
+      <small class="form-text text-danger" *ngIf="registerForm.controls.phone.hasError('pattern')">wrong format
+        phone</small>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

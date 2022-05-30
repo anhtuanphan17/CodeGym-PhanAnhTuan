@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chương trình hiển thị ra được phần tử có giá trị lớn nhất trong mảng và vị trí của phần tử đó.</title>
+</head>
+<body>
+<script>
+
+    let size;
+    let check;
+    let x = new Array(size);
+
+    do {
+        size = prompt('Nhap so phan tu cua mang', '');
+
+        check = parseInt(size) == size && 0 < size <= 10;
+
+
+    } while (!check)
+
+    for (let i = 0; i < size; i++) {
+        x[i] = prompt('Nhap gia tri thu' + i + 'cua mang vao ');
+
+
+    }
+
+    function timMax() {
+        let max = x[0];
+        let index = 0;
+        for (let j = 0; j < size; j++) {
+            if (max < x[j]) {
+                max = x[j];
+                index = j;
+            }
+
+        }
+        document.write('gia tri lon nhat la ' + max + '<br>');
+        document.write('o vi tri thu ' + index);
+    }
+
+    timMax();
+
+
+</script>
+</body>
+</html>

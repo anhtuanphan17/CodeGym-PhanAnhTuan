@@ -1,0 +1,139 @@
+<app-navigataion></app-navigataion>
+<div class="mx-auto w-75 mt-5">
+  <h2>Create Edit Form</h2>
+  <form [formGroup]="customerEditForm" (ngSubmit)="submitCustomerEditForm()" class="row g-3">
+    <input type="hidden" formControlName="id">
+    <div class="col-md-6">
+      <label for="customerCode" class="form-label">Customer Code</label>
+      <input formControlName="customerCode" type="text" class="form-control" name="customerCode" id="customerCode">
+      <div
+        *ngIf="customerEditForm.controls.customerCode.invalid && (customerEditForm.controls.customerCode.dirty || customerEditForm.controls.customerCode.touched)">
+        <small *ngIf="customerEditForm.controls.customerCode.hasError('pattern')" style="color: red">Wrong format, ex:
+          KH-0123</small>
+        <small
+          *ngIf="customerEditForm.controls.customerCode.hasError('required') || customerEditForm.controls.customerCode.errors.empty"
+          style="color: red">Empty! Input please!</small>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <label for="customerName" class="form-label">Customer name</label>
+      <input formControlName="customerName" type="text" class="form-control" id="customerName">
+      <div
+        *ngIf="customerEditForm.controls.customerName.invalid&&(customerEditForm.controls.customerName.touched||customerEditForm.controls.customerName.dirty)">
+        <small class="form-text text-danger" *ngIf="customerEditForm.controls.customerName.hasError('required')">please input customer name</small>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <label for="customerBirthday" class="form-label">Customer Birthday</label>
+      <input formControlName="customerBirthday" type="date" class="form-control" id="customerBirthday">
+      <div
+        *ngIf="customerEditForm.controls.customerBirthday.invalid && (customerEditForm.controls.customerBirthday.dirty || customerEditForm.controls.customerBirthday.touched) || customerEditForm.controls.customerBirthday.errors?.empty">
+        <small
+          *ngIf="customerEditForm.controls.customerBirthday.errors.required || customerEditForm.controls.customerBirthday.errors.empty"
+          style="color: red">Please choose a date!</small>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <label for="customerIdCard" class="form-label">Custiomer ID Card</label>
+      <input formControlName="customerIdCard" type="text" class="form-control" id="customerIdCard">
+      <div
+        *ngIf="customerEditForm.controls.customerIdCard.invalid &&
+        (customerEditForm.controls.customerIdCard.dirty || customerEditForm.controls.customerIdCard.touched) ||
+        customerEditForm.controls.customerIdCard.errors?.empty">
+        <small
+          *ngIf="customerEditForm.controls.customerIdCard.errors.required || customerEditForm.controls.customerIdCard.errors.empty"
+          style="color: red">please input Customer Id Card</small>
+        <small class="form-text text-danger" *ngIf="customerEditForm.controls.customerIdCard.errors.pattern">
+          wrong format of customer Id Card(include 9 number)
+        </small>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <label for="customerPhone" class="form-label">Customer Phone</label>
+      <input formControlName="customerPhone" type="text" class="form-control" id="customerPhone">
+      <div
+        *ngIf="customerEditForm.controls.customerPhone.invalid &&
+        (customerEditForm.controls.customerPhone.dirty || customerEditForm.controls.customerPhone.touched) ||
+        customerEditForm.controls.customerPhone.errors?.empty">
+        <small
+          *ngIf="customerEditForm.controls.customerPhone.errors.required || customerEditForm.controls.customerPhone.errors.empty"
+          style="color: red">please input customerPhone</small>
+        <small class="form-text text-danger" *ngIf="customerEditForm.controls.customerPhone.errors.pattern">
+          Wrong format, ex: 090xxxxxxx or 091xxxxxxx or (84)+90xxxxxxx or (84)+91xxxxxxx
+        </small>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <label class="form-label">Customer Gender</label>
+      <select formControlName="customerGender" name="customerGender" class="form-select">
+        <option selected value="1">Male</option>
+        <option value="0">Female</option>
+      </select>
+      <!--      <label>Select customer gender:</label><br>-->
+      <!--      <input type="radio" id="female" value='0' formControlName="customerGender" style="margin: 10px;">-->
+      <!--      <label for="female" style="margin-bottom: 1px;">Female</label><br>-->
+      <!--      <input type="radio" id="male" value='1' formControlName="customerGender" style="margin: 10px;">-->
+      <!--      <label for="male">Male</label>-->
+      <div
+        *ngIf="customerEditForm.controls.customerGender.invalid && (customerEditForm.controls.customerGender.dirty
+         || customerEditForm.controls.customerGender.touched) || customerEditForm.controls.customerGender.errors?.empty">
+        <small
+          *ngIf="customerEditForm.controls.customerGender.errors?.required || customerEditForm.controls.customerGender.errors?.empty"
+          style="color: red">Please choose customer gender!</small>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+
+      <label class="form-label" for="email">Email:</label>
+      <input id="email" type="text" class="form-control" formControlName="customerEmail">
+      <div
+        *ngIf="customerEditForm.controls.customerEmail.invalid && (customerEditForm.controls.customerEmail.dirty || customerEditForm.controls.customerEmail.touched) || customerEditForm.controls.customerEmail.errors?.empty">
+        <span *ngIf="customerEditForm.controls.customerEmail.errors.email" style="color: red">Wrong format, ex: abc@gmail.com</span>
+        <span
+          *ngIf="customerEditForm.controls.customerEmail.errors.required || customerEditForm.controls.customerEmail.errors.empty"
+          style="color: red">Empty! Input please!</span>
+      </div>
+    </div>
+
+
+    <div class="col-md-6">
+      <label for="customerType" class="form-label">Customer type</label>
+      <select formControlName="customerTypeId" id="customerType" class="form-select">
+        <option selected value="1">Diamond</option>
+        <option value="2">Platinum</option>
+        <option value="3">Gold</option>
+        <option value="4">Member</option>
+      </select>
+
+      <div
+        *ngIf="customerEditForm.controls.customerTypeId.invalid && (customerEditForm.controls.customerTypeId.dirty
+         || customerEditForm.controls.customerTypeId.touched) || customerEditForm.controls.customerTypeId.errors?.empty">
+        <small
+          *ngIf="customerEditForm.controls.customerTypeId.errors?.required || customerEditForm.controls.customerTypeId.errors?.empty"
+          style="color: red">please choose customer type</small>
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <label for="customerAddress" class="form-label">Customer Address</label>
+      <input formControlName="customerAddress" type="text" class="form-control" id="customerAddress">
+      <div
+        *ngIf="customerEditForm.controls.customerAddress.invalid && (customerEditForm.controls.customerAddress.dirty
+         || customerEditForm.controls.customerAddress.touched) || customerEditForm.controls.customerAddress.errors?.empty">
+        <small
+          *ngIf="customerEditForm.controls.customerAddress.errors?.required || customerEditForm.controls.customerAddress.errors?.empty"
+          style="color: red">please input address</small>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary btn-block mb-4" style="text-align: center ">Edit</button>
+    </div>
+  </form>
+</div>

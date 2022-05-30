@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hàm nhận vào 3 số nguyên bất kỳ, trả về số nguyên có giá trị nhỏ nhất</title>
+</head>
+<body>
+<script>
+
+
+    function timMin(a) {
+        let min =a[0];
+        for (let i = 1; i < 3; i++) {
+            if(a[0]>a[i]){
+                min=a[i];
+            }
+
+        }document.write(min);
+    }
+    let x=new Array(3);
+    for(let i=0;i<3;i++){
+        x[i]=prompt();
+    }
+
+    timMin(x);
+
+
+
+</script>
+</body>
+</html>

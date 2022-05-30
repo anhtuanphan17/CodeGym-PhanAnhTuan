@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> In ra giá trị trung bình của các phần tử trong mảng.</title>
+</head>
+<body>
+<script>
+
+    let size;
+    let check;
+    let x = new Array(size);
+    let result = 0;
+
+    do {
+        size = prompt('Nhap so luong phan tu cua mang vao day', '');
+        check = parseInt(size) == size && 0 < size <= 20;
+
+    } while (!check)
+
+
+    for (let i = 0; i < size; i++) {
+        x[i] = parseInt(prompt('Nhap vao gia tri thu' + i));
+        result += x[i];
+    }
+    let giaTriTB = result / size;
+    document.write(giaTriTB);
+
+
+
+</script>
+
+</body>
+</html>

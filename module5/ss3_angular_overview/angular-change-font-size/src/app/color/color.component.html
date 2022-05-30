@@ -1,0 +1,12 @@
+
+<h2>Font size editor</h2>
+
+<div>
+  <label>Enter color range (px): </label>
+  <input (change)="colorEditor()" type="range" min="1" max="2" value="2" [(ngModel)]="colorRange">
+</div>
+
+<p class="output" [style.color]="color">
+  This is a paragraph.
+</p>
+

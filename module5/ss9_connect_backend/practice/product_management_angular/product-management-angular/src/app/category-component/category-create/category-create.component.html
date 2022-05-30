@@ -1,0 +1,17 @@
+<h1>Create Form</h1>
+<form [formGroup]="createCategoryForm" (ngSubmit)="submit()">
+<table>
+  <tr>
+    <td>Category ID</td>
+    <td><input type="number" formControlName="id"></td>
+  </tr>
+  <tr>
+    <td>Category Name</td>
+    <td><input type="text" formControlName="categoryName"></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><button>Create</button></td>
+  </tr>
+</table>
+</form>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>In Hinh Tam Giac Vuong</title>
+</head>
+<body>
+<script>
+
+//tam giac 1
+    for (let i = 1; i <= 5; i++) {
+        for (let j = 1; j <= i; j++) {
+            document.write('*');
+        }
+        document.write('<br>');
+    }
+
+////tam giac 2
+    for (let i = 1; i <= 5; i++) {
+        for (let j = 5; j >= i; j--) {
+            document.write('*');
+
+        }
+        document.write('<br>');
+    }
+//tam giac 3
+
+    for (let i = 1; i <= 5; i++) {
+        for (let j = 4; j >= i; j--) {
+            document.write('&ensp;');
+        }
+        for (let k = 1; k <= i; k++) {
+            document.write('*');
+        }
+        document.write('<br>');
+
+    }
+
+////tam giac 4
+    for (let i = 1; i <= 5; i++) {
+        for (let k = 1; k <= i - 1; k++) {
+            document.write('&ensp;');
+        }
+
+        for (j = 5; j >= i; j--) {
+            document.write('*');
+
+        }
+
+
+        document.write('<br>');
+    }
+
+
+    document.write('<br>');
+
+
+
+</script>
+
+</body>
+</html>

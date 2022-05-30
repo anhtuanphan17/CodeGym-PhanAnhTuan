@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<P>Total Bill <input id="num1"type="text"></p><br>
+<p>Number of people   <input id="num2" type="text"></p>
+<p>Amount for 1 person is: <button onmouseover="layThongTin()"> Lấy dữ liệu</button></p>
+<div id ="display"></div>
+<script>
+    // let name = prompt("Nhâp tên: "); // nhập dữ liệu từ bàn phím dùng prompt của js
+    //
+    // alert("Tên vừa nhập: " + name ) // hiên thij cùng câu lệnh cuủ js
+
+    // let name = document.getElementById("name").value;
+    // alert(name);
+    //
+
+    function layThongTin() {
+        let bill = document.getElementById("num1").value;
+        bill= parseInt(bill);
+        let amount = document.getElementById("num2").value;
+        amount= parseInt(amount);
+        let bill_of_1 =bill/amount;
+
+        document.write("Amount for 1 person is:" +   bill_of_1);
+
+    }
+</script>
+</body>
+</html>

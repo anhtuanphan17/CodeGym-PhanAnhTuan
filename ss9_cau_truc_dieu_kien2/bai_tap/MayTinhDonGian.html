@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>May Tinh Don Gian</title>
+</head>
+
+<body>
+
+<input id="display" type="text"><br>
+<input type="button" value="1" onclick="nhapLieu(this.value)">
+<input type="button" value="2" onclick="nhapLieu('2')">
+<input type="button" value="3" onclick="nhapLieu('3')">
+<input type="button" value="+" onclick="nhapLieu('+')"><br>
+<input type="button" value="4" onclick="nhapLieu('4')">
+<input type="button" value="5" onclick="nhapLieu('5')">
+<input type="button" value="6" onclick="nhapLieu('6')">
+<input type="button" value="-" onclick="nhapLieu('-')"><br>
+<input type="button" value="7" onclick="nhapLieu('7')">
+<input type="button" value="8" onclick="nhapLieu('8')">
+<input type="button" value="9" onclick="nhapLieu('9')">
+<input type="button" value="*" onclick="nhapLieu('*')"><br>
+<input type="button" value="/" onclick="nhapLieu('/')">
+<input type="button" value="C" onclick="xoa()">
+<input type="button" value="=" onclick="tinh()">
+
+
+<script>
+
+    function nhapLieu(value) {
+        document.getElementById("display").value += value;
+    }
+
+    function tinh() {
+        let bieuthuc = document.getElementById("display").value;
+        document.getElementById("display").value = eval(bieuthuc);
+    }
+    function xoa(){
+        let C =document.getElementById("display").value;
+        document.getElementById("display").value='';
+
+    }
+
+
+
+</script>
+
+
+</body>
+
+</html>

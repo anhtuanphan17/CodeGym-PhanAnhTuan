@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chương trình đếm số nguyên âm trong một chuỗi</title>
+</head>
+<body>
+<script>
+
+    let size;
+    let count =0;
+    let x=new Array(size);
+
+    do{
+        size = prompt('Nhap vao so luong phan tu cua mang','');
+        check = parseInt(size)==size&&0<size<=20;
+    }while(!check)
+
+
+
+    for(let i=0;i<size;i++){
+        x[i]=prompt('Nhap vao gia tri thu ' + i);
+    }
+
+    for(let i=0;i<size;i++){
+
+        if(x[i]==parseInt(x[i])&&x[i]<0){
+            count++;
+        }
+    }
+
+    document.write('so luong so nguyen am trong chuoi la: '+ count);
+
+
+
+
+
+</script>
+
+</body>
+</html>

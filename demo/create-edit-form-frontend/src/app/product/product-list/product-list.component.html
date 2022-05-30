@@ -1,0 +1,13 @@
+
+<table class="table stripe">
+  <tr>
+    <th>STT</th>
+    <th colspan="2" class="text-center">Action</th>
+  </tr>
+  <tr *ngFor="let product of products; index as i">
+    <td>{{i + 1}}</td>
+    <td>
+      <a [routerLink]="['/api/product/',product.id]">Edit</a>
+    </td>
+  </tr>
+</table>

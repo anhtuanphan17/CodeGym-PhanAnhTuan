@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 5 Chom Sao Tuong Ung</title>
+</head>
+<body>
+<input type="button" value="search" onclick="kiemTraChomSaoTuongUng(input)">
+<script>
+    let input = prompt('Nhap vao ten ngoi sao cua ban: ', '');
+
+    let arr1 = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    let arr2 = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa", "Major", "Leo"];
+
+    function kiemTraChomSaoTuongUng(a) {
+        let count=0;
+        for (let i = 0; i < arr1.length; i++) {
+            if (a == arr1[i]) {
+                alert('chom sao tuong ung la:  ' + arr2[i]);
+
+            } else {
+                count++;
+
+            }
+
+            if (count == arr1.length) {
+                alert('Khong tim thay chom sao tuong ung');
+            }
+
+        }
+
+
+    }
+
+
+</script>
+
+</body>
+</html>

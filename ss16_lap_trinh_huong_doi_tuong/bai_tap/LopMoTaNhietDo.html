@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lop mo ta nhiet do</title>
+</head>
+<body>
+<script>
+
+    class Temperature {
+        constructor(Cdegree) {
+            this.Cdegree = Cdegree;
+
+        }
+
+        getFdegree() {
+            return this.Cdegree * 9 / 5 + 32;
+        }
+
+        getKdegree() {
+            return this.Cdegree + 273.15;
+        }
+    }
+
+    let nhietDo = new Temperature(30);
+    let doF = nhietDo.getFdegree();
+    let doK = nhietDo.getKdegree();
+    alert('do F la ' + doF + ' do K la ' + doK);
+
+
+</script>
+
+</body>
+</html>

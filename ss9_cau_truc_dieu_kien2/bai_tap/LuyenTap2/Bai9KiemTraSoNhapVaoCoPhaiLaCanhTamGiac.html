@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiem Tra So Nhap Vao Co Phai La Canh Tam Giac</title>
+</head>
+<body>
+<script>
+    let a=parseInt(prompt('Nhap vao canh thu 1',''));
+    let b=parseInt(prompt('Nhap vao canh thu 2',''));
+    let c=parseInt(prompt('Nhap vao canh thu 3',''));
+
+    if((a&&b&&c>0)&&(a+b)>c&&(b+c)>a&&(a+c)>b){
+        alert('a,b,c la 3 canh cua tam giac');
+    }else{
+        alert('a,b,c khong phai la 3 canh cua tam giac');
+    }
+
+</script>
+
+</body>
+</html>

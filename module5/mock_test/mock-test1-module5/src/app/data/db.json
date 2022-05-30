@@ -1,0 +1,77 @@
+{
+  "product": [
+    {
+      "id": 1,
+      "productName": "Iphone 10",
+      "price": 800,
+      "quantity": 20,
+      "color": "1",
+      "category": {
+        "id": 1,
+        "categoryName": "Phone"
+      }
+    },
+    {
+      "id": 2,
+      "productName": "Iphone 12",
+      "price": 1800,
+      "quantity": 220,
+      "color": "2",
+      "category": {
+        "id": 1,
+        "categoryName": "Phone"
+      }
+    },
+    {
+      "id": 3,
+      "productName": "Smart TV 200 inch",
+      "price": 800,
+      "quantity": "20000",
+      "color": "2",
+      "category": {
+        "id": 2,
+        "categoryName": "Tivi"
+      }
+    },
+    {
+      "id": 4,
+      "productName": "Samsung V3 washing machine",
+      "price": 800,
+      "quantity": 20,
+      "color": "3",
+      "category": {
+        "id": 4,
+        "categoryName": "Washing Machine"
+      }
+    },
+    {
+      "id": 5,
+      "productName": "Smart TV 500 inch",
+      "price": "123",
+      "quantity": "150000000",
+      "color": "1",
+      "category": {
+        "id": 1,
+        "categoryName": "Phone"
+      }
+    }
+  ],
+  "category": [
+    {
+      "id": 1,
+      "categoryName": "Phone"
+    },
+    {
+      "id": 2,
+      "categoryName": "Tivi"
+    },
+    {
+      "id": 3,
+      "categoryName": "Refrigerator"
+    },
+    {
+      "id": 4,
+      "categoryName": "Washing Machine"
+    }
+  ]
+}

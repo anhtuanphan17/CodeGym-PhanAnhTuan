@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh Lai Ngan Hang</title>
+</head>
+<body>
+<script>
+
+// vay 3 nam , lai suat 10%/nam
+
+//     lai suat1 = tong tien*10%
+//     lai suat2 = laisuat1*10% + tong tien*10%
+//     lai suat3 = laisuat2*10% +tong tien*10%
+
+
+let n= parseInt(prompt('Nhap vao so nam vay',''));
+let total = parseInt(prompt('Tong so tien muon vay: ',''));
+
+let laiSuatn=0;
+
+for(let i=1;i<=n;i++){
+
+
+     laiSuatn = laiSuatn +(total+laiSuatn)*0.1;
+}
+document.write(laiSuatn);
+
+
+</script>
+</body>
+</html>

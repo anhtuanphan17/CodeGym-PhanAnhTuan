@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chương trình thực hiện tính và hiển thị xem có bao nhiêu số nguyên lớn hơn hoặc bằng 10.</title>
+</head>
+<body>
+<script>
+    let size;
+    let check;
+    let count =0;
+
+    do{
+        size = prompt('Nhap so phan tu cua mang','');
+        check= parseInt(size)==size&&0<size&&size<=10;
+
+
+    }while(!check);
+
+    let x=new Array(size);
+    for(let i=0;i<size;i++){
+        x[i]=parseInt(prompt('Nhap vao phan tu thu '+ i +' cua mang'));
+
+    }
+
+    for(let i=0;i<size;i++){
+
+        if(x[i]>=10){
+            count++;
+
+        }
+
+
+    }
+    document.write('So phan tu >=10 la: '+ count);
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

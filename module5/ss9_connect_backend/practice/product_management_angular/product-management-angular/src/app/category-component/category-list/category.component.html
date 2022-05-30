@@ -1,0 +1,15 @@
+<a [routerLink]="['category-list/create']">Create Form</a>
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Category Name</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  <tr *ngFor="let category of categories; i as index">
+    <td>{{category.id}}</td>
+    <td>{{category.categoryName}}
+    <td><a [routerLink]="['category-list/edit',category.id]">Edit</a></td>
+    <td><button (click)="onDelete(category.id)">Delete</button></td>
+  </tr>
+</table>

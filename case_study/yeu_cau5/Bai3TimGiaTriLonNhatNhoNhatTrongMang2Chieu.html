@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hàm tìm giá trị lớn nhất, nhỏ nhất trong mảng 2 chiều</title>
+</head>
+<body>
+<script>
+
+
+    let m = prompt('Nhap vao so phan tu cua mang cha');
+    let n = prompt('Nhap vao so phan tu cua mang con');
+    let x = new Array(m);
+
+    for (let i = 0; i < m; i++) {
+        x[i] = new Array(n);
+        for (let j = 0; j < n; j++) {
+            x[i][j] = parseInt(prompt('Nhap vao gia tri' + i + '' + j))
+
+        }
+
+    }
+
+    timMax(x, m, n);
+    timMin(x, m, n);
+
+
+    function timMax(x, m, n) {
+        let max = x[0][0];
+        for (let i = 0; i < m; i++) {
+            for (let j = 0; j < n; j++) {
+                if (x[i][j] > max) {
+                    max = x[i][j];
+
+                }
+
+
+            }
+
+        }
+        document.write('Gia tri lon nhat la: '+ max + '<br>');
+
+    }
+
+    function timMin(x, m, n) {
+        let min = x[0][0];
+        for (let i = 0; i < m; i++) {
+            for (let j = 0; j < n; j++) {
+                if (x[i][j] < min) {
+                    min = x[i][j];
+
+                }
+
+
+            }
+
+        }
+        document.write('Gia tri nho nhat la: '+ min);
+
+    }
+
+
+</script>
+
+</body>
+</html>

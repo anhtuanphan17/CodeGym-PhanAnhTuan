@@ -1,0 +1,121 @@
+{
+  "tin": [
+    {
+      "id": 1,
+      "danhMuc": "1",
+      "nguoiDangTin": "caNhan",
+      "loaiTin": "1",
+      "tinhTrang": "moi",
+      "diaChi": "Da Nang",
+      "dienTich": 200,
+      "huong": "dong",
+      "tuaDe": "Can ban dat",
+      "noiDung": "Dat mat tien 20m",
+      "gia": 200000
+    },
+    {
+      "id": 2,
+      "danhMuc": "1",
+      "nguoiDangTin": "caNhan",
+      "loaiTin": "2",
+      "tinhTrang": "moi",
+      "diaChi": "Da Nang",
+      "dienTich": 200,
+      "huong": "dong",
+      "tuaDe": "Can ban dat",
+      "noiDung": "Dat mat tien 20m",
+      "gia": 200000
+    },
+    {
+      "id": 3,
+      "danhMuc": "Ha Noi",
+      "nguoiDangTin": "caNhan",
+      "loaiTin": "2",
+      "tinhTrang": "daSuDung",
+      "diaChi": "Da Nang",
+      "dienTich": "200",
+      "huong": "Dong",
+      "tuaDe": "Ban nha mat pho",
+      "noiDung": "haha",
+      "gia": "20000"
+    },
+    {
+      "id": 4,
+      "danhMuc": "HaNi",
+      "nguoiDangTin": "caNhan",
+      "loaiTin": "2",
+      "tinhTrang": "moi",
+      "diaChi": "Da Nang",
+      "dienTich": "190",
+      "huong": "Tay",
+      "tuaDe": "Ban nha mat pho",
+      "noiDung": "haha",
+      "gia": "99999"
+    },
+    {
+      "id": 5,
+      "danhMuc": "Ho Chi Minh",
+      "nguoiDangTin": "congTy",
+      "loaiTin": "3",
+      "tinhTrang": "daSuDung",
+      "diaChi": "202 Cach Mang Thang Tam",
+      "dienTich": "345",
+      "huong": "Bac",
+      "tuaDe": "Nha Rieng",
+      "noiDung": "haha",
+      "gia": "4848"
+    },
+    {
+      "id": 7,
+      "danhMuc": "Ho Chi Minh",
+      "nguoiDangTin": "congTy",
+      "loaiTin": "2",
+      "tinhTrang": "daSuDung",
+      "diaChi": "456Cach Mang Thang Tam",
+      "dienTich": "125",
+      "huong": "Tay",
+      "tuaDe": "Nha Rieng Can Ban",
+      "noiDung": "haha",
+      "gia": "676"
+    },
+    {
+      "id": 8,
+      "danhMuc": "Ho Chi Minh",
+      "nguoiDangTin": "caNhan",
+      "loaiTin": "2",
+      "tinhTrang": "daSuDung",
+      "diaChi": "992 Cach Mang Thang Tam",
+      "dienTich": "121",
+      "huong": "Dong",
+      "tuaDe": "Ban nha mat pho,bo lam to",
+      "noiDung": "haha",
+      "gia": "666"
+    },
+    {
+      "id": 9,
+      "danhMuc": null,
+      "nguoiDangTin": null,
+      "loaiTin": null,
+      "tinhTrang": null,
+      "diaChi": null,
+      "dienTich": null,
+      "huong": null,
+      "tuaDe": null,
+      "noiDung": null,
+      "gia": null
+    },
+    {
+      "id": 10,
+      "danhMuc": "Ha Noi11111",
+      "nguoiDangTin": "congTy",
+      "loaiTin": "1",
+      "tinhTrang": "moi",
+      "diaChi": "dfffffffffff",
+      "dienTich": "190",
+      "huong": "Tay",
+      "tuaDe": "Nha Rieng Can Ban",
+      "noiDung": "haha",
+      "gia": "7777"
+    }
+  ]
+}

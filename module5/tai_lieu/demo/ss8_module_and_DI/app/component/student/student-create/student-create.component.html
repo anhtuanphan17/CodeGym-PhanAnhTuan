@@ -1,0 +1,29 @@
+<!--<form #registerForm ="ngForm" (ngSubmit)="submitStudent(registerForm)">-->
+<!--  <label>Id</label>-->
+<!--  <input ngModel name="id" type="text" required>-->
+<!--  <label>Name</label>-->
+<!--  <input ngModel type="text" name="name">-->
+<!--  <label>Date of Birth</label>-->
+<!--  <input ngModel type="date" name="dateOfBirth">-->
+<!--  <label>Point</label>-->
+<!--  <input ngModel type="number" name="point">-->
+<!--  <button type="submit">Create</button>-->
+<!--</form>-->
+
+<form [formGroup]="studentForm" (ngSubmit)="submitStudent()">
+  <label>Id</label>
+  <input formControlName="id" name="id" type="text"><br>
+  <p style="color: red" *ngIf="(studentForm.controls.id.hasError('required')&&(studentForm.controls.id.touched||studentForm.controls.id.dirty))">Id không được để trống</p>
+<!--  <p style="color: red" *ngIf="(studentForm.controls.id.hasError('min')&&(studentForm.controls.id.touched||studentForm.controls.id.dirty))">Id không được mang giá trị nhỏ hơn 0</p>-->
+  <p style="color: red" *ngIf="(studentForm.controls.id.hasError('invalid0')&&(studentForm.controls.id.touched||studentForm.controls.id.dirty))">Id không được mang giá trị nhỏ hơn 0</p>
+  <label>Name</label>
+  <input formControlName="name" type="text" name="name"><br>
+  <label>Date of Birth</label>
+  <input formControlName="dateOfBirth" type="date" name="dateOfBirth"><br>
+  <label>Point</label>
+  <input formControlName="point" type="number" name="point"><br>
+  <select formControlName="classroom" [compareWith]="compareFn">
+    <option *ngFor="let temp of listClass" [ngValue]="temp">{{temp.nameClass}}</option>
+  </select>
+  <button type="submit">Create</button>
+</form>

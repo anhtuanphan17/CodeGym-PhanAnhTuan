@@ -1,0 +1,31 @@
+<h1>edit san pham</h1>
+<form [formGroup]="productForm" (ngSubmit)="submit()">
+  <table>
+    <tr>
+      <td>Tên sản phẩm:</td>
+      <td><input type="text" formControlName="name"></td>
+    </tr>
+    <tr>
+      <td>Giá sản phẩm</td>
+      <td><input type="number" formControlName="price"></td>
+    </tr>
+    <tr>
+      <td>Date</td>
+      <td><input type="text" formControlName="date"></td>
+    </tr>
+    <tr>
+      <td>Danh mục sản phẩm</td>
+      <td><select formControlName="category" [compareWith]="compare">
+<!--        <option selected [value]="null" disabled>Chọn danh mục sản phẩm</option>-->
+        <option *ngFor="let category of categories" [ngValue]="category">{{category.categoryName}}</option>
+      </select></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <button>edit</button>
+      </td>
+    </tr>
+  </table>
+</form>
+

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ung Dung May Tinh</title>
+</head>
+<body>
+<p>Type first number: <input id ="n1" type ="text"> </p>
+<P>Type second number: <input id = "n2" type ="text"> </P>
+
+<select id ="operate">
+    <option>+</option>
+    <option>-</option>
+    <option>*</option>
+    <option>/</option>
+</select>
+
+<p>result<input id="result" type="text"></p>
+<button onclick="myfunction()">submit</button>
+
+
+
+<script type="text/javascript">
+function myfunction() {
+    let a = document.getElementById('n1').value;
+    let b = document.getElementById('n2').value;
+    let operator = document.getElementById('operate').value;
+    let result = 0;
+
+    if (operator=="+") {
+        result = parseInt(a) + parseInt(b);
+    }else if(operator=="-"){
+        result = parseInt(a) - parseInt(b);
+    }else if(operator=="*"){
+        result =parseInt (a) * parseInt(b);
+    } else{
+        result = parseInt(a) / parseInt(b);
+    }
+    document.getElementById('result').value = result;
+}
+
+
+</script>
+</body>
+</html>

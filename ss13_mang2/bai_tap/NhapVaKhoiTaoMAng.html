@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // khoi tao 1 mảng và nhập giá trị cho các phần tử của mảng;
+    //b1: khai báo mảng (cần có độ dài của mảng)
+    //b2: nhập phần tử cho mảng
+    let size;
+
+
+
+    alert(size);
+
+    let check;
+    do {
+        size = prompt("nhập độ dài của mảng");
+        check=parseInt(size)===size&&0<size&&size<=20;
+    }while (!check)
+    let array = new Array(size);
+    for (let i =0; i<array.length; i++){
+        array[i]= parseInt(prompt("nhập vào phần tử thứ "+ i));
+    }
+    alert(array);
+
+
+</script>
+</body>
+</html>

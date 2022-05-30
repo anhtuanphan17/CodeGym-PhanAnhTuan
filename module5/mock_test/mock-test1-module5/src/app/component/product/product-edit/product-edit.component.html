@@ -1,0 +1,98 @@
+<div class="col-8 mx-auto">
+  <h1>Edit product</h1>
+  <form [formGroup]="productForm" (ngSubmit)="submit()" class="row g-3">
+    <div class="col-md-6">
+      <!--    input-->
+      <input type="hidden" formControlName="id">
+      <label class="form-label">Product Name</label>
+      <input formControlName="productName" type="text" class="form-control" name="productName" id="productName">
+
+      <!--    hien thi loi-->
+      <div
+        *ngIf="productForm.controls.productName.invalid && (productForm.controls.productName.dirty || productForm.controls.productName.touched|| productForm.controls.category.errors?.empty)">
+        <!--        <small *ngIf="productForm.controls.productName.hasError('pattern')" class="form-text text-danger">Wrong format,-->
+        <!--          ex:-->
+        <!--          KH-0123</small>-->
+        <small
+          *ngIf="productForm.controls.productName.hasError('required') || productForm.controls.productName.errors.empty"
+          class="form-text text-danger">Require not empty.</small>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <!--    input-->
+      <input type="hidden" formControlName="id">
+      <label class="form-label">Product Price</label>
+      <input formControlName="price" type="text" class="form-control" name="price" id="price">
+
+      <!--    hien thi loi-->
+      <div
+        *ngIf="productForm.controls.price.invalid && (productForm.controls.price.dirty || productForm.controls.price.touched|| productForm.controls.category.errors?.empty)">
+        <!--      <small *ngIf="productForm.controls.price.hasError('pattern')" class="form-text text-danger">Wrong format, ex:-->
+        <!--        KH-0123</small>-->
+        <small
+          *ngIf="productForm.controls.price.hasError('required') || productForm.controls.productName.errors.empty"
+          class="form-text text-danger">Require not empty.</small>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <!--    input-->
+      <input type="hidden" formControlName="id">
+      <label class="form-label">Product Quantity</label>
+      <input formControlName="quantity" type="text" class="form-control" name="quantity" id="quantity">
+
+      <!--    hien thi loi-->
+      <div
+        *ngIf="productForm.controls.quantity.invalid && (productForm.controls.quantity.dirty || productForm.controls.quantity.touched || productForm.controls.category.errors?.empty)">
+        <!--      <small *ngIf="productForm.controls.price.hasError('pattern')" class="form-text text-danger">Wrong format, ex:-->
+        <!--        KH-0123</small>-->
+        <small
+          *ngIf="productForm.controls.quantity.hasError('required') || productForm.controls.productName.errors.empty"
+          class="form-text text-danger">Require not empty.</small>
+      </div>
+    </div>
+
+
+    <div class="col-md-6">
+      <label class="form-label">Product Color</label>
+      <select formControlName="color" name="color" class="form-control">
+        <option selected value="1">Red</option>
+        <option value="2">Blue</option>
+        <option value="3">Green</option>
+      </select>
+
+      <div
+        *ngIf="productForm.controls.color.invalid && (productForm.controls.color.dirty
+         || productForm.controls.color.touched|| productForm.controls.color.errors?.empty)">
+        <small
+          *ngIf="productForm.controls.color.errors?.required || productForm.controls.color.errors?.empty"
+          class="form-text text-danger">Require not empty.</small>
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <label class="form-label">Choose category:</label>
+      <select id="category" class="form-control" formControlName="category" [compareWith]="compare">
+        <option *ngFor="let c of categories; let first" [selected]="first" [ngValue]="c">{{c.id}}
+          - {{c.categoryName}}</option>
+      </select>
+      <div
+        *ngIf="productForm.controls.category.invalid && (productForm.controls.category.dirty || productForm.controls.category.touched) || productForm.controls.category.errors?.empty">
+        <small *ngIf="productForm.controls.category.errors.required || productForm.controls.category.errors.empty"
+               class="form-text text-danger">Require not empty.</small>
+      </div>
+    </div>
+
+    <div class="submit-form" style="display:flex;justify-content: center; width: 100%; margin-top: 20px">
+      <button type="submit" class="btn btn-primary">
+        Create
+      </button>
+      <a [routerLink]="['/product/list']" style="margin-left: 10px" class="btn btn-primary">
+        Cancel
+      </a>
+
+    </div>
+
+  </form>
+</div>

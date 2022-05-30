@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh Dien Tich Hinh Tron</title>
+</head>
+<body>
+<p>Type circle 's radius here<input id="radious" type ="text" </p>
+<p><button type ="button" onclick="dt()">dien tich - Chu vi</button></p>
+<p><button type = "button" onclick="chuvi()">Chu vi</button> </p>
+</body>
+
+<script>
+    function dt(){
+        let R = document.getElementById("radious").value;
+        R = parseInt(R);
+
+        let pi = 3.14;
+
+        let S = (R**2)*pi;
+        let C = 2*R*pi;
+
+        document.write('S = ' + S);
+        document.write('<br>');
+        document.write('C ='+ C);
+
+    }
+
+
+</script>
+</html>

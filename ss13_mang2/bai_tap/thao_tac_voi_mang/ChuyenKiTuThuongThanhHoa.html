@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chương trình nhập vào một chuỗi và chuyển các ký tự chữ thường trong chuỗi vừa nhập sang thành dạng chữ
+        hoa</title>
+</head>
+<body>
+<script>
+
+    //     let str = prompt('Nhap chuoi ki tu vao day','') ;
+    //
+    //     let result =[];
+    //
+    //     for(let i=0;i<str.length;i++){
+    //         if(str[i]===str[i].toUpperCase()){
+    //             result.push(str[i].toLowerCase());
+    //
+    //         }else if(str[i]===str[i].toLowerCase()){
+    //             result.push(str.toUpperCase());
+    //         }
+    //
+    //
+    //     }
+    // document.write(result);
+
+
+    let string = prompt('Nhap gia tri vao day: ', '');
+    var upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    var lower = 'abcdefghijklmnopqrstuvwxyz';
+    let result = [];
+
+    for(let i=0;i<string.length;i++){
+        if(upper.indexOf(string[i])!==-1){
+        result.push(string[i].toLowerCase());
+
+        }else if(lower.indexOf(string[i])!==-1){
+        result.push(string[i].toUpperCase());
+
+        }else{
+             result.push(string[i]);
+        }
+
+
+    }
+
+    document.write(result.join(''));
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

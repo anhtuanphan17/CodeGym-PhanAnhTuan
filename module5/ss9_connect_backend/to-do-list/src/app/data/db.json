@@ -1,0 +1,34 @@
+{
+  "todo": [
+    {
+      "id": 1,
+      "content": "casestudy",
+      "complete": true
+    },
+    {
+      "id": 2,
+      "content": "excercise",
+      "complete": false
+    },
+    {
+      "id": 3,
+      "content": "sss",
+      "complete": true
+    },
+    {
+      "id": 4,
+      "content": null,
+      "complete": false
+    },
+    {
+      "id": 5,
+      "content": null,
+      "complete": true
+    },
+    {
+      "id": 6,
+      "content": "asdasd",
+      "complete": true
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+<table class="table table-bordered">
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Date of birth</th>
+    <th>Point</th>
+    <th>Rank</th>
+    <th>Classroom</th>
+    <th>Detail</th>
+  </tr>
+
+  <tr *ngFor="let student of students">
+    <td>{{student.id}}</td>
+    <td>{{student.name | uppercase}}</td>
+    <td>{{student.dateOfBirth | date: "dd-MM-yyyy"}}</td>
+    <td>{{student.point}}</td>
+    <td>
+      <p *ngIf="student.point<7">Bad</p>
+      <p *ngIf="student.point>=7">Good</p>
+    </td>
+    <td>{{student.classroom.nameClass}}</td>
+    <td>
+      <button [routerLink]="['/student/detail',student.id]">Detail</button>
+    </td>
+  </tr>
+</table>
+<!--<app-student-info [studentX] ="studentTemp"></app-student-info>-->
+<app-student-create (submitCreateStudent)="createStudent($event)"></app-student-create>

@@ -1,0 +1,58 @@
+{
+  "student": [
+    {
+      "id": 3,
+      "name": "HaiTT2",
+      "dateOfBirth": "2022-01-02",
+      "point": 8,
+      "classroom": {
+        "id": 3,
+        "nameClass": "C0921G1"
+      }
+    },
+    {
+      "id": 5,
+      "name": "HaiTT",
+      "dateOfBirth": "2022-01-02",
+      "point": 8,
+      "classroom": {
+        "id": 4,
+        "nameClass": "C0821G1"
+      }
+    },
+    {
+      "id": "6",
+      "name": "HaiTT4",
+      "dateOfBirth": "2022-01-02",
+      "point": 8,
+      "classroom": {
+        "id": 4,
+        "nameClass": "C0821G1"
+      }
+    },
+    {
+      "id": "7",
+      "name": "HaiTT5",
+      "dateOfBirth": "2022-01-02",
+      "point": 8,
+      "classroom": {
+        "id": 4,
+        "nameClass": "C0821G1"
+      }
+    }
+  ],
+  "classrooms": [
+    {
+      "id": 4,
+      "nameClass": "C0821G1"
+    },
+    {
+      "id": 5,
+      "nameClass": "C0921G1"
+    },
+    {
+      "id": 6,
+      "nameClass": "C1021G1"
+    }
+  ]
+}

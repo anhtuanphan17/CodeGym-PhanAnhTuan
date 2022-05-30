@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tim so fibonanci chia het cho </title>
+</head>
+<body>
+<script>
+
+    let xn = 0;
+    let x1 = 0;
+
+    let x2 = 1;
+
+
+    for (let i = 3; i <= 20; i++) {
+
+        xn = x1 + x2;
+
+        x1 = x2;
+        x2 = xn;
+        if(xn%5==0){
+            document.write(xn +',');
+            break;
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
